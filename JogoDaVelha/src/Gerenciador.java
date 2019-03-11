@@ -50,40 +50,37 @@ public class Gerenciador {
 					
 			 
 			 
-			 if(player1.isVez()) {
+			 if(jogo.verificaVitoria(player1)) {
+				 System.out.println("Fim de Jogo");
+				 jogo.imprimeMatriz();
+				 System.out.println(" ");
+				 JOptionPane.showMessageDialog(null, "O Jogador: " + player1.getNome() + " ganhou");
+				 player1.setVitorias(player1.getVitorias()+1);
 				 
-				 if(jogo.verificaVitoria(player1)) {
-					 System.out.println("Fim de Jogo");
-					 jogo.imprimeMatriz();
-					 System.out.println(" ");
-					 JOptionPane.showMessageDialog(null, "O Jogador: " + player1.getNome() + " ganhou");
-					 player1.setVitorias(player1.getVitorias()+1);
-					 
-				 }
-				 
-				 player1.setVez(false);
-				 player2.setVez(true);
-			 }else {
-				 
-				 if(jogo.verificaVitoria(player2)) {
-					 System.out.println("Fim de Jogo");
-					 jogo.imprimeMatriz();
-					 System.out.println(" ");
-					 JOptionPane.showMessageDialog(null, "O Jogador: " + player2.getNome() + " ganhou"); 
-					 player2.setVitorias(player2.getVitorias()+1);
-	
-				 }
-				 player2.setVez(false);
-				 player1.setVez(true);
-			 }
-			 				 
-			 if(jogo.verificaEmpate()) {
+			 }else if(jogo.verificaVitoria(player2)) {
+				 System.out.println("Fim de Jogo");
+				 jogo.imprimeMatriz();
+				 System.out.println(" ");
+				 JOptionPane.showMessageDialog(null, "O Jogador: " + player2.getNome() + " ganhou"); 
+				 player2.setVitorias(player2.getVitorias()+1);
+
+			 }else if(jogo.verificaEmpate()) {
 				 System.out.println("Fim de Jogo");
 				 jogo.imprimeMatriz();
 				 System.out.println(" "); 
 				 JOptionPane.showMessageDialog(null, "O Jogo terminou empatado"); 
 				
 			  }
+			 
+			 if(player1.isVez()) {
+				 
+				 player1.setVez(false);
+				 player2.setVez(true);
+			 }else {
+				 
+				 player2.setVez(false);
+				 player1.setVez(true);
+			 }
 			 
 			 if(jogo.verificaVitoria(player1) || jogo.verificaVitoria(player2) || jogo.verificaEmpate()) {
 				 
@@ -156,42 +153,39 @@ public static void jogoVSComp(Jogador player1, Jogador player2) {
 			 			 
 			 jogo.grade[linha][coluna] = player1.isVez()? String.valueOf(player1.getCaractere()) : String.valueOf(player2.getCaractere());
 					
-			 
-			 
-			 if(player1.isVez()) {
+			 if(jogo.verificaVitoria(player1)) {
+				 System.out.println("Fim de Jogo");
+				 jogo.imprimeMatriz();
+				 System.out.println(" ");
+				 JOptionPane.showMessageDialog(null, "O Jogador: " + player1.getNome() + " ganhou");
+				 player1.setVitorias(player1.getVitorias()+1);
 				 
-				 if(jogo.verificaVitoria(player1)) {
-					 System.out.println("Fim de Jogo");
-					 jogo.imprimeMatriz();
-					 System.out.println(" ");
-					 JOptionPane.showMessageDialog(null, "O Jogador: " + player1.getNome() + " ganhou");
-					 player1.setVitorias(player1.getVitorias()+1);
-					 
-				 }
-				 
-				 player1.setVez(false);
-				 player2.setVez(true);
-			 }else {
-				 
-				 if(jogo.verificaVitoria(player2)) {
-					 System.out.println("Fim de Jogo");
-					 jogo.imprimeMatriz();
-					 System.out.println(" ");
-					 JOptionPane.showMessageDialog(null, "O Jogador: " + player2.getNome() + " ganhou"); 
-					 player2.setVitorias(player2.getVitorias()+1);
-	
-				 }
-				 player2.setVez(false);
-				 player1.setVez(true);
-			 }
-			 				 
-			 if(jogo.verificaEmpate()) {
+			 }else if(jogo.verificaVitoria(player2)) {
+				 System.out.println("Fim de Jogo");
+				 jogo.imprimeMatriz();
+				 System.out.println(" ");
+				 JOptionPane.showMessageDialog(null, "O Jogador: " + player2.getNome() + " ganhou"); 
+				 player2.setVitorias(player2.getVitorias()+1);
+
+			 }else if(jogo.verificaEmpate()) {
 				 System.out.println("Fim de Jogo");
 				 jogo.imprimeMatriz();
 				 System.out.println(" "); 
 				 JOptionPane.showMessageDialog(null, "O Jogo terminou empatado"); 
 				
 			  }
+			 
+			 if(player1.isVez()) {
+				 
+				 player1.setVez(false);
+				 player2.setVez(true);
+			 }else {
+				 
+				 player2.setVez(false);
+				 player1.setVez(true);
+			 }
+			 				 
+			
 			 
 			 if(jogo.verificaVitoria(player1) || jogo.verificaVitoria(player2) || jogo.verificaEmpate()) {
 				 
